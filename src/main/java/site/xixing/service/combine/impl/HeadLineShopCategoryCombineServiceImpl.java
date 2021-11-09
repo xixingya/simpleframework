@@ -39,6 +39,10 @@ public class HeadLineShopCategoryCombineServiceImpl implements HeadLineShopCateg
     }
 
     private Result<MainPageInfoDTO> mergeMainPageInfoResult(Result<List<HeadLine>> headLineResult, Result<List<ShopCategory>> shopCategoryResult) {
-        return  null;
+        final Result<MainPageInfoDTO> mainPageInfoDTOResult = new Result<>();
+        final MainPageInfoDTO mainPageInfoDTO = new MainPageInfoDTO();
+        mainPageInfoDTO.setHeadLineList(headLineResult.getData());
+        mainPageInfoDTO.setShopCategoryList(shopCategoryResult.getData());
+        return  mainPageInfoDTOResult;
     }
 }
